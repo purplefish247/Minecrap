@@ -3,11 +3,13 @@
 #include <vector>
 using namespace std;
 
+//Constants
 int WIDTH = 600;
 int HEIGHT = 600;
 
 int BACKGROUND[4] = {0, 0, 0, SDL_ALPHA_OPAQUE};
 
+//Structs
 struct vec3d
 {
 	float x, y, z;
@@ -28,7 +30,7 @@ struct mat4x4
 	float m[4][4] = { 0 };
 };
 
-
+//Procedures
 void MultiplyMatrixVector(vec3d &i, vec3d &o, mat4x4 &m)
 {
     o.x = i.x * m.m[0][0] + i.y * m.m[1][0] + i.z * m.m[2][0] + m.m[3][0];
@@ -48,7 +50,7 @@ void clear(SDL_Renderer* rend)
     SDL_RenderClear(rend);
 }
 
-
+//Main Function
 int main()
 {
     SDL_Window* window = nullptr;
